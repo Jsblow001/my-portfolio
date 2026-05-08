@@ -78,6 +78,52 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
+        /* 인적사항 테이블 스타일 */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .info-table th, .info-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+        .info-table th {
+            background-color: #f8f9fa;
+            color: var(--primary);
+            width: 120px;
+            font-weight: 700;
+        }
+        .info-table td { color: var(--sub-text); }
+        .info-table tr:last-child th, .info-table tr:last-child td { border-bottom: none; }
+
+        /* 이력서 보기 버튼 */
+        .btn-resume {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+            margin-top: 25px;
+        }
+        .btn-resume:hover {
+            background-color: #0873c4;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(9, 132, 227, 0.4);
+        }
+
         /* Sections */
         section { padding: 80px 0; border-top: 1px solid var(--border); }
         h2 { font-size: 1.8rem; margin-bottom: 40px; font-weight: 700; }
@@ -225,7 +271,30 @@
             <br>
             <div class="hero-content">
                 <h1>안녕하세요,<br>탄탄한 로직을 지향하는<br><span>백엔드 개발자</span> 김지섭입니다.</h1>
-                <p>코드로 서비스를 하나하나 구축해가는 과정에서 큰 즐거움을 느끼며, <br>효율적인 시스템 아키텍처를 고민합니다.</p>
+                <p>효율적인 시스템 아키텍처와 관계형 데이터베이스 모델링에 강점이 있으며, <br>사용자 중심의 가치를 코드로 구현합니다.</p>
+                
+                <table class="info-table">
+                    <tr>
+                        <th>Contact</th>
+                        <td>010-5391-9104</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>killkim3333@naver.com</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>경기도 시흥시 정왕대로53번길 29</td>
+                    </tr>
+                    <tr>
+                        <th>Tech Core</th>
+                        <td>Java, Spring Boot, Oracle DB, AWS</td>
+                    </tr>
+                </table>
+
+                <a href="readme.html" target="_blank" class="btn-resume">
+                    📄 이력서 보기
+                </a>
             </div>
         </section>
 
