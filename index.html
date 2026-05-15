@@ -53,11 +53,11 @@
         }
         .nav-menu a:hover { color: var(--accent); }
 
-        /* Hero Section - 사진 배치를 위해 수정됨 */
+        /* Hero Section */
         .hero { 
             padding: 100px 0 60px; 
             display: flex; 
-            align-items: center; 
+            align-items: flex-start; /* center에서 flex-start로 변경하여 사진을 텍스트 상단에 맞춤 */
             gap: 40px; 
         }
         .hero-content { flex: 1; }
@@ -68,6 +68,7 @@
         /* 프로모션 사진 스타일 */
         .profile-photo {
             flex-shrink: 0;
+            margin-top: 8px; /* h1 텍스트의 첫 줄 중심과 시각적 균형을 맞추기 위한 여백 */
         }
         .profile-photo img {
             width: 180px;
@@ -241,7 +242,17 @@
 
         /* 모바일 대응 */
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; gap: 30px; padding: 60px 0; }
+            .hero { 
+                flex-direction: column; 
+                align-items: center; /* 모바일에서는 가운데 정렬 */
+                text-align: center; 
+                gap: 20px; 
+                padding: 60px 0; 
+            }
+            .profile-photo {
+                margin-top: 0;
+                margin-bottom: 10px; /* 글과의 적절한 간격 유지 */
+            }
             .hero h1 { font-size: 2.2rem; }
             .hero p { margin: 0 auto; }
             .nav-menu { display: none; }
@@ -268,7 +279,6 @@
             <div class="profile-photo">
                 <img src="img/profile.jpg" alt="김지섭 증명사진">
             </div>
-            <br>
             <div class="hero-content">
                 <h1>안녕하세요,<br>탄탄한 로직을 지향하는<br><span>백엔드 개발자</span> 김지섭입니다.</h1>
                 <p>효율적인 시스템 아키텍처와 관계형 데이터베이스 모델링에 강점이 있으며, <br>사용자 중심의 가치를 코드로 구현합니다.</p>
@@ -460,6 +470,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
         <section id="edu-cert">
@@ -534,3 +545,4 @@
 
 </body>
 </html>
+
