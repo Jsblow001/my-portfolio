@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jiseop | Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         :root {
             --primary: #2d3436;
@@ -460,7 +461,45 @@
                     <h4 style="margin: 25px 0 10px; font-size: 1rem;">DB 설계 (담당 파트)</h4>
                     <p style="font-size: 0.9rem; color: var(--sub-text);">예약 시스템, 프로모션 관리, 고객 소통 및 통계 부문의 DB 설계를 수행했습니다.</p>
                     <div class="erd-box">
-                        <img src="https://github.com/user-attachments/assets/e38f455a-bcfd-46d1-bf59-f4c01039a4a4" alt="Ciel Hotel ERD Area">
+                        <div class="carousel-container" style="margin-top: 25px;">
+    <div class="swiper mySwiper" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); background: #fff; overflow: hidden;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="display: flex; flex-direction: column;">
+                <img src="https://github.com/user-attachments/assets/e38f455a-bcfd-46d1-bf59-f4c01039a4a4" style="width: 100%; height: auto; display: block;">
+                <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
+                    데이터베이스 ERD 설계 (담당 파트)
+                </div>
+            </div>
+            <div class="swiper-slide" style="display: flex; flex-direction: column;">
+                <img src="img/mainpage.png" style="width: 100%; height: auto; display: block;">
+                <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
+                    메인페이지
+                </div>
+            </div>
+            <div class="swiper-slide" style="display: flex; flex-direction: column;">
+                <img src="img/revenue.png" style="width: 100%; height: auto; display: block;">
+                <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
+                    관리자 대시보드: 수익 및 통계 분석 (Chart.js 활용)
+                </div>
+            </div>
+            <div class="swiper-slide" style="display: flex; flex-direction: column;">
+                <img src="img/CS.png" style="width: 100%; height: auto; display: block;">
+                <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
+                    CS: 고객센터
+                </div>
+            </div>
+            <div class="swiper-slide" style="display: flex; flex-direction: column;">
+                <img src="img/promotion.png" style="width: 100%; height: auto; display: block;">
+                <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
+                    프로모션
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next" style="color: var(--accent); transform: scale(0.7);"></div>
+        <div class="swiper-button-prev" style="color: var(--accent); transform: scale(0.7);"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
                         <div class="erd-caption">▲ 담당 범위: Reservation, Promotion, Q&A, FAQ, Stats</div>
                         <div style="margin-top: 15px;">
                             <a href="https://github.com/Jsblow001/Final_hotel" target="_blank" style="text-decoration: none; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
@@ -543,6 +582,26 @@
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    const swiper = new Swiper(".mySwiper", {
+        loop: true, // 무한 반복
+        spaceBetween: 10, // 슬라이드 간 간격
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 3500, // 3.5초마다 자동 전환
+            disableOnInteraction: false,
+        },
+    });
+</script>
+
 </body>
 </html>
-
