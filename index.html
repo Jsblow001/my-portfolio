@@ -260,6 +260,49 @@
             .info-item { flex-direction: column; align-items: flex-start; gap: 8px; }
             .info-date { text-align: left; min-width: auto; }
         }
+        
+        /* 캐러셀 기본 고정 높이 및 여백 설정 */
+        .swiper-slide {
+            height: 520px; /* 캡션과 페이지네이션 공간 확보를 위해 높이 약간 증가 */
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+
+        /* 이미지 영역: 하단 페이지네이션 공간(30px) 제외하고 꽉 채움 */
+        .swiper-slide img {
+            width: 100%;
+            height: calc(100% - 70px); /* 캡션 높이를 제외한 영역 */
+            object-fit: cover; 
+            display: block;
+        }
+
+        /* 첫 번째 사진(ERD) 예외 처리 */
+        .swiper-slide.erd-slide img {
+            object-fit: contain !important;
+            background-color: #f8f9fa;
+        }
+
+        /* 캡션 스타일: 페이지네이션과 겹치지 않도록 하단 여백 추가 */
+        .slide-caption {
+            padding: 15px 10px 45px; 
+            font-size: 0.85rem;
+            color: var(--sub-text);
+            background: #f8f9fa;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        /* 페이지네이션(동그라미) 위치 조정 */
+        .swiper-pagination {
+            bottom: 8px !important; /* 캡션의 가장 하단 영역에 위치 */
+        }
+
+        @media (max-width: 768px) {
+            .swiper-slide { height: 350px; }
+        }
+
     </style>
 </head>
 <body>
@@ -450,58 +493,39 @@
                                     <img src="https://github.com/user-attachments/assets/18fa1cdf-4e94-4718-92f9-5bd0a421e5f2"
                                         style="width:100%; height:auto; display:block;">
 
-                                    <div class="slide-caption"
-                                        style="padding:10px; font-size:0.85rem; color:var(--sub-text);
-                                                background:#f8f9fa; text-align:center; border-top:1px solid var(--border);">
-                                        데이터베이스 ERD 설계
+                                    <div class="slide-caption">데이터베이스 ERD 설계
                                     </div>
                                 </div>
 
                                 <!-- 메인페이지 -->
                                 <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_mainpage.png"
-                                        style="width:100%; height:auto; display:block;">
+                                    <img src="img/sp_mainpage.png">
 
-                                    <div class="slide-caption"
-                                        style="padding:10px; font-size:0.85rem; color:var(--sub-text);
-                                                background:#f8f9fa; text-align:center; border-top:1px solid var(--border);">
-                                        메인 페이지
+                                    <div class="slide-caption">메인 페이지
                                     </div>
                                 </div>
 
                                 <!-- 마이페이지 -->
                                 <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_mypage.png"
-                                        style="width:100%; height:auto; display:block;">
+                                    <img src="img/sp_mypage.png">
 
-                                    <div class="slide-caption"
-                                        style="padding:10px; font-size:0.85rem; color:var(--sub-text);
-                                                background:#f8f9fa; text-align:center; border-top:1px solid var(--border);">
-                                        마이페이지
+                                    <div class="slide-caption">마이페이지
                                     </div>
                                 </div>
 
                                 <!-- 관리자 대시보드 -->
                                 <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_admindashboard.png"
-                                        style="width:100%; height:auto; display:block;">
+                                    <img src="img/sp_admindashboard.png">
 
-                                    <div class="slide-caption"
-                                        style="padding:10px; font-size:0.85rem; color:var(--sub-text);
-                                                background:#f8f9fa; text-align:center; border-top:1px solid var(--border);">
-                                        관리자 대시보드
+                                    <div class="slide-caption">관리자 대시보드
                                     </div>
                                 </div>
 
                                 <!-- 수익관리 -->
                                 <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_revenue.png"
-                                        style="width:100%; height:auto; display:block;">
+                                    <img src="img/sp_revenue.png">
 
-                                    <div class="slide-caption"
-                                        style="padding:10px; font-size:0.85rem; color:var(--sub-text);
-                                                background:#f8f9fa; text-align:center; border-top:1px solid var(--border);">
-                                        수익관리
+                                    <div class="slide-caption">수익관리
                                     </div>
                                 </div>
 
@@ -556,46 +580,38 @@
                     <h4 style="margin: 25px 0 10px; font-size: 1rem;">DB 설계 (담당 파트)</h4>
                     <p style="font-size: 0.9rem; color: var(--sub-text);">예약 시스템, 프로모션 관리, 고객 소통 및 통계 부문의 DB 설계를 수행했습니다.</p>
                     <div class="erd-box">
-                        <div class="carousel-container" style="margin-top: 25px;">
-                            <div class="swiper mySwiper" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); background: #fff; overflow: hidden;">
+                        <div class="carousel-container">
+                            <div class="swiper mySwiper" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide" style="display: flex; flex-direction: column;">
-                                        <img src="https://github.com/user-attachments/assets/e38f455a-bcfd-46d1-bf59-f4c01039a4a4" style="width: 100%; height: auto; display: block;">
-                                        <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
-                                            데이터베이스 ERD 설계 (담당 파트)
-                                        </div>
+                                    
+                                    <!-- 첫 번째 슬라이드: ERD (erd-slide 클래스를 추가하여 contain 적용) -->
+                                    <div class="swiper-slide erd-slide">
+                                        <img src="https://github.com/user-attachments/assets/e38f455a-bcfd-46d1-bf59-f4c01039a4a4">
+                                        <div class="slide-caption">데이터베이스 ERD 설계 (담당 파트)</div>
                                     </div>
-                                    <div class="swiper-slide" style="display: flex; flex-direction: column;">
-                                        <img src="img/mainpage.png" style="width: 100%; height: auto; display: block;">
-                                        <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
-                                            메인페이지
-                                        </div>
+                                    
+                                    <!-- 두 번째 슬라이드부터: 빈 공간 없이 꽉 차게 노출 (cover 적용) -->
+                                    <div class="swiper-slide">
+                                        <img src="img/mainpage.png">
+                                        <div class="slide-caption">메인페이지</div>
                                     </div>
-                                    <div class="swiper-slide" style="display: flex; flex-direction: column;">
-                                        <img src="img/revenue.png" style="width: 100%; height: auto; display: block;">
-                                        <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
-                                            관리자 대시보드: 수익 및 통계 분석 (Chart.js 활용)
-                                        </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/revenue.png">
+                                        <div class="slide-caption">관리자 대시보드: 수익 및 통계 분석 (Chart.js)</div>
                                     </div>
-                                    <div class="swiper-slide" style="display: flex; flex-direction: column;">
-                                        <img src="img/CS.png" style="width: 100%; height: auto; display: block;">
-                                        <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
-                                            CS: 고객센터
-                                        </div>
+                                    <div class="swiper-slide">
+                                        <img src="img/promotion.png">
+                                        <div class="slide-caption">프로모션 관리 페이지</div>
                                     </div>
-                                    <div class="swiper-slide" style="display: flex; flex-direction: column;">
-                                        <img src="img/promotion.png" style="width: 100%; height: auto; display: block;">
-                                        <div class="slide-caption" style="padding: 10px; font-size: 0.85rem; color: var(--sub-text); background: #f8f9fa; text-align: center; border-top: 1px solid var(--border);">
-                                            프로모션
-                                        </div>
-                                    </div>
+
                                 </div>
+                                <!-- 캐러셀 컨트롤러 -->
                                 <div class="swiper-button-next" style="color: var(--accent); transform: scale(0.7);"></div>
                                 <div class="swiper-button-prev" style="color: var(--accent); transform: scale(0.7);"></div>
                                 <div class="swiper-pagination"></div>
                             </div>
                         </div>
-                        <div class="erd-caption">▲ 담당 범위: Reservation, Promotion, Q&A, FAQ, Stats</div>
+                        <div class="erd-caption">▲ 담당 범위: Reservation, Promotion, Q&A, Stats</div>
                         <div style="margin-top: 15px;">
                             <a href="https://github.com/Jsblow001/Final_hotel" target="_blank" style="text-decoration: none; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
                                 📂 Ciel Hotel GitHub Repository 방문하기 →
