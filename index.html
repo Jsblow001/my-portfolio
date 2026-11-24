@@ -58,7 +58,7 @@
         .hero { 
             padding: 100px 0 60px; 
             display: flex; 
-            align-items: flex-start; /* center에서 flex-start로 변경하여 사진을 텍스트 상단에 맞춤 */
+            align-items: flex-start;
             gap: 40px; 
         }
         .hero-content { flex: 1; }
@@ -66,10 +66,10 @@
         .hero h1 span { color: var(--accent); }
         .hero p { font-size: 1.15rem; color: var(--sub-text); max-width: 600px; }
 
-        /* 프로모션 사진 스타일 */
+        /* 프로필 사진 스타일 */
         .profile-photo {
             flex-shrink: 0;
-            margin-top: 8px; /* h1 텍스트의 첫 줄 중심과 시각적 균형을 맞추기 위한 여백 */
+            margin-top: 8px;
         }
         .profile-photo img {
             width: 180px;
@@ -245,14 +245,14 @@
         @media (max-width: 768px) {
             .hero { 
                 flex-direction: column; 
-                align-items: center; /* 모바일에서는 가운데 정렬 */
+                align-items: center;
                 text-align: center; 
                 gap: 20px; 
                 padding: 60px 0; 
             }
             .profile-photo {
                 margin-top: 0;
-                margin-bottom: 10px; /* 글과의 적절한 간격 유지 */
+                margin-bottom: 10px;
             }
             .hero h1 { font-size: 2.2rem; }
             .hero p { margin: 0 auto; }
@@ -263,27 +263,26 @@
         
         /* 캐러셀 기본 고정 높이 및 여백 설정 */
         .swiper-slide {
-            height: 520px; /* 캡션과 페이지네이션 공간 확보를 위해 높이 약간 증가 */
+            height: 520px;
             display: flex;
             flex-direction: column;
             background: #ffffff;
         }
 
-        /* 이미지 영역: 하단 페이지네이션 공간(30px) 제외하고 꽉 채움 */
         .swiper-slide img {
             width: 100%;
-            height: calc(100% - 70px); /* 캡션 높이를 제외한 영역 */
+            height: calc(100% - 70px);
             object-fit: cover; 
             display: block;
         }
 
-        /* 첫 번째 사진(ERD) 예외 처리 */
+        /* 첫 번째 사진(ERD/테이블 설계) 예외 처리 */
         .swiper-slide.erd-slide img {
             object-fit: contain !important;
             background-color: #f8f9fa;
         }
 
-        /* 캡션 스타일: 페이지네이션과 겹치지 않도록 하단 여백 추가 */
+        /* 캡션 스타일 */
         .slide-caption {
             padding: 15px 10px 45px; 
             font-size: 0.85rem;
@@ -296,7 +295,7 @@
 
         /* 페이지네이션(동그라미) 위치 조정 */
         .swiper-pagination {
-            bottom: 8px !important; /* 캡션의 가장 하단 영역에 위치 */
+            bottom: 8px !important;
         }
 
         @media (max-width: 768px) {
@@ -342,7 +341,7 @@
                     </tr>
                     <tr>
                         <th>Tech Core</th>
-                        <td>Java, Spring Boot, Oracle DB, AWS</td>
+                        <td>Java, Spring Boot, Node.js, Oracle DB, AWS</td>
                     </tr>
                 </table>
 
@@ -361,6 +360,8 @@
                         <img src="https://img.shields.io/badge/Java%2017-007396?style=flat-square&logo=java&logoColor=white"/>
                         <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/>
                         <img src="https://img.shields.io/badge/Spring%20Security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white"/>
+                        <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/>
+                        <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white"/>
                         <img src="https://img.shields.io/badge/Apache%20Tomcat-F8DC75?style=flat-square&logo=apache-tomcat&logoColor=black"/>
                         <img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"/>
                         <img src="https://img.shields.io/badge/MyBatis-black?style=flat-square&logo=apache&logoColor=white"/>
@@ -368,9 +369,9 @@
                     </div>
                     <ul class="skill-details">
                         <li>Spring Security와 JWT를 활용한 보안 및 인증/인가 체계 구축</li>
+                        <li>Node.js(Express) 기반 RESTful API 및 단일 세션 토큰 검증 구현</li>
+                        <li>트랜잭션 및 DB 제약조건 기반 동시성 제어와 비즈니스 로직 최적화</li>
                         <li>Apache Tomcat WAS 환경에서의 서블릿 컨테이너 및 웹 서비스 구동</li>
-                        <li>RESTful API 설계 및 MVC 기반 웹 서비스 구현</li>
-                        <li>관계형 데이터베이스 모델링 및 비즈니스 로직 최적화</li>
                     </ul>
                 </div>
 
@@ -382,7 +383,8 @@
                         <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/>
                     </div>
                     <ul class="skill-details">
-                        <li>Oracle 및 MySQL을 활용한 다차원 집계 쿼리 설계</li>
+                        <li>Oracle 및 MySQL을 활용한 관계형 모델링 및 다차원 집계 쿼리 설계</li>
+                        <li>UNIQUE 제약조건과 원자적 트랜잭션을 활용한 데이터 정합성 보장</li>
                         <li>Gradle을 활용한 프로젝트 빌드 자동화 및 의존성 관리</li>
                     </ul>
                 </div>
@@ -406,6 +408,7 @@
                 <div class="skill-group">
                     <h3>Frontend</h3>
                     <div class="skill-tags">
+                        <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
                         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
                         <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jquery&logoColor=white"/>
                         <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"/>
@@ -413,6 +416,7 @@
                         <img src="https://img.shields.io/badge/Bootstrap_4-7952B3?style=flat-square&logo=bootstrap&logoColor=white"/>
                     </div>
                     <ul class="skill-details">
+                        <li>React 컴포넌트 기반의 상태 관리 및 실시간 세션 Polling UI 구현</li>
                         <li>JavaScript와 jQuery를 활용한 동적 UI/UX 인터랙션 구현</li>
                         <li>Bootstrap을 이용한 반응형 웹 디자인 및 레이아웃 설계</li>
                     </ul>
@@ -454,6 +458,7 @@
         <section id="projects">
             <h2>🚀 Projects</h2>
 
+            <!-- 1. SISEON -->
             <div class="project-card">
                 <div class="project-header">
                     <div>
@@ -475,91 +480,72 @@
                     <p style="font-size: 0.9rem; color: var(--sub-text);">회원 관리, 방문자 관리, 수익관리 부분의 DB 설계를 수행했습니다.</p>
                     <h4 style="margin: 25px 0 10px; font-size: 1rem;">프로젝트 화면</h4>
 
-                <p style="font-size: 0.9rem; color: var(--sub-text);">
-                    회원 관리, 방문자 관리, 수익관리 부문의 DB 설계를 수행했습니다.
-                </p>
+                    <p style="font-size: 0.9rem; color: var(--sub-text);">
+                        회원 관리, 방문자 관리, 수익관리 부문의 DB 설계를 수행했습니다.
+                    </p>
 
-                <div class="erd-box">
+                    <div class="erd-box">
+                        <div class="carousel-container" style="margin-top:25px;">
+                            <div class="swiper semiSwiper"
+                                style="width:100%; border-radius:12px; border:1px solid var(--border); background:#fff; overflow:hidden;">
+                                <div class="swiper-wrapper">
+                                    <!-- ERD -->
+                                    <div class="swiper-slide" style="display:flex; flex-direction:column;">
+                                        <img src="https://github.com/user-attachments/assets/18fa1cdf-4e94-4718-92f9-5bd0a421e5f2"
+                                            style="width:100%; height:auto; display:block;">
+                                        <div class="slide-caption">데이터베이스 ERD 설계</div>
+                                    </div>
 
-                    <div class="carousel-container" style="margin-top:25px;">
+                                    <!-- 메인페이지 -->
+                                    <div class="swiper-slide" style="display:flex; flex-direction:column;">
+                                        <img src="img/sp_mainpage.png">
+                                        <div class="slide-caption">메인 페이지</div>
+                                    </div>
 
-                        <div class="swiper semiSwiper"
-                            style="width:100%; border-radius:12px; border:1px solid var(--border); background:#fff; overflow:hidden;">
+                                    <!-- 마이페이지 -->
+                                    <div class="swiper-slide" style="display:flex; flex-direction:column;">
+                                        <img src="img/sp_mypage.png">
+                                        <div class="slide-caption">마이페이지</div>
+                                    </div>
 
-                            <div class="swiper-wrapper">
+                                    <!-- 관리자 대시보드 -->
+                                    <div class="swiper-slide" style="display:flex; flex-direction:column;">
+                                        <img src="img/sp_admindashboard.png">
+                                        <div class="slide-caption">관리자 대시보드</div>
+                                    </div>
 
-                                <!-- ERD -->
-                                <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="https://github.com/user-attachments/assets/18fa1cdf-4e94-4718-92f9-5bd0a421e5f2"
-                                        style="width:100%; height:auto; display:block;">
-
-                                    <div class="slide-caption">데이터베이스 ERD 설계
+                                    <!-- 수익관리 -->
+                                    <div class="swiper-slide" style="display:flex; flex-direction:column;">
+                                        <img src="img/sp_revenue.png">
+                                        <div class="slide-caption">수익관리</div>
                                     </div>
                                 </div>
 
-                                <!-- 메인페이지 -->
-                                <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_mainpage.png">
-
-                                    <div class="slide-caption">메인 페이지
-                                    </div>
-                                </div>
-
-                                <!-- 마이페이지 -->
-                                <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_mypage.png">
-
-                                    <div class="slide-caption">마이페이지
-                                    </div>
-                                </div>
-
-                                <!-- 관리자 대시보드 -->
-                                <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_admindashboard.png">
-
-                                    <div class="slide-caption">관리자 대시보드
-                                    </div>
-                                </div>
-
-                                <!-- 수익관리 -->
-                                <div class="swiper-slide" style="display:flex; flex-direction:column;">
-                                    <img src="img/sp_revenue.png">
-
-                                    <div class="slide-caption">수익관리
-                                    </div>
-                                </div>
-
+                                <div class="swiper-button-next semi-next"
+                                    style="color:var(--accent); transform:scale(0.7);"></div>
+                                <div class="swiper-button-prev semi-prev"
+                                    style="color:var(--accent); transform:scale(0.7);"></div>
+                                <div class="swiper-pagination semi-pagination"></div>
                             </div>
-
-                            <div class="swiper-button-next semi-next"
-                                style="color:var(--accent); transform:scale(0.7);"></div>
-
-                            <div class="swiper-button-prev semi-prev"
-                                style="color:var(--accent); transform:scale(0.7);"></div>
-
-                            <div class="swiper-pagination semi-pagination"></div>
-
                         </div>
 
-                    </div>
+                        <div class="erd-caption">
+                            ▲ 담당 범위 : 회원 관리, 방문자 관리, 수익관리
+                        </div>
 
-                    <div class="erd-caption">
-                        ▲ 담당 범위 : 회원 관리, 방문자 관리, 수익관리
+                        <div style="margin-top:15px;">
+                            <a href="https://github.com/Jsblow001/SemiProject"
+                            target="_blank"
+                            style="text-decoration:none; color:var(--accent);
+                                    font-size:0.9rem; font-weight:600;">
+                                📂 SISEON GitHub Repository 방문하기 →
+                            </a>
+                        </div>
                     </div>
-
-                    <div style="margin-top:15px;">
-                        <a href="https://github.com/Jsblow001/SemiProject"
-                        target="_blank"
-                        style="text-decoration:none; color:var(--accent);
-                                font-size:0.9rem; font-weight:600;">
-                            📂 SISEON GitHub Repository 방문하기 →
-                        </a>
-                    </div>
-
-                </div>
                 </div>
             </div>
 
+            <!-- 2. Ciel Hotel -->
             <div class="project-card">
                 <div class="project-header">
                     <div>
@@ -584,13 +570,13 @@
                             <div class="swiper mySwiper" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
                                 <div class="swiper-wrapper">
                                     
-                                    <!-- 첫 번째 슬라이드: ERD (erd-slide 클래스를 추가하여 contain 적용) -->
+                                    <!-- 첫 번째 슬라이드: ERD -->
                                     <div class="swiper-slide erd-slide">
                                         <img src="https://github.com/user-attachments/assets/e38f455a-bcfd-46d1-bf59-f4c01039a4a4">
                                         <div class="slide-caption">데이터베이스 ERD 설계 (담당 파트)</div>
                                     </div>
                                     
-                                    <!-- 두 번째 슬라이드부터: 빈 공간 없이 꽉 차게 노출 (cover 적용) -->
+                                    <!-- 두 번째 슬라이드부터 -->
                                     <div class="swiper-slide">
                                         <img src="img/mainpage.png">
                                         <div class="slide-caption">메인페이지</div>
@@ -615,6 +601,78 @@
                         <div style="margin-top: 15px;">
                             <a href="https://github.com/Jsblow001/Final_hotel" target="_blank" style="text-decoration: none; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
                                 📂 Ciel Hotel GitHub Repository 방문하기 →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Bus Booking App -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <h3 class="project-title">🚌 풀스택 버스 예매 시스템 (Bus Booking App)</h3>
+                        <p class="project-period">2026.04 - 2026.05 | 개인 풀스택 프로젝트</p>
+                    </div>
+                    <span class="project-tag">React / Node.js / Oracle</span>
+                </div>
+                <div class="project-content">
+                    <p>Oracle DB, Node.js(Express), React를 기반으로 구축한 버스 예매 애플리케이션으로, 다중 사용자 환경에서의 좌석 동시성 제어와 실시간 중복 로그인 방지에 중점을 두고 설계했습니다.</p>
+                    <h4 style="margin: 15px 0 10px; font-size: 1rem;">Key Accomplishments</h4>
+                    <ul>
+                        <li><strong>원자적 트랜잭션 및 동시성 중복 예매 방지:</strong> 좌석 선점 검증 후 <code>COMMIT/ROLLBACK</code> 트랜잭션 처리와 Oracle DB의 <code>UNIQUE</code> 제약조건(<code>UK_SCHEDULE_SEAT</code>)을 결합해 동일 좌석 동시 승인 차단</li>
+                        <li><strong>단일 세션 보장 및 실시간 중복 로그인 감지:</strong> 로그인 시 UUID 기반 <code>CURRENT_TOKEN</code>을 갱신하고, 프론트엔드 주기적 세션 검증(Polling)으로 기존 접속 브라우저 자동 강제 로그아웃 구현</li>
+                        <li><strong>노선 시간표 조회 및 실시간 좌석 선택 UI:</strong> 한국 시간대(KST) 기준 노선·일정 동적 필터링, 예매 완료(<code>PAID</code>) 좌석 비활성화 및 선택 매수·결제 금액 실시간 계산 구현</li>
+                    </ul>
+
+                    <h4 style="margin: 25px 0 10px; font-size: 1rem;">DB 설계 및 구현 화면</h4>
+                    <p style="font-size: 0.9rem; color: var(--sub-text);"><code>USERS</code>(세션 토큰 관리), <code>SCHEDULES</code>(노선 및 운행 회차), <code>RESERVATIONS</code>(회차·좌석 복합 유니크 제약) 3개 핵심 테이블 설계와 React·Express 풀스택 전 과정을 구현했습니다.</p>
+                    <div class="erd-box">
+                        <div class="carousel-container">
+                            <div class="swiper busSwiper" style="width: 100%; border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+                                <div class="swiper-wrapper">
+                                    
+                                    <!-- 첫 번째 슬라이드: ERD / DB 스키마 -->
+                                    <div class="swiper-slide erd-slide">
+                                        <img src="img/bus_erd.png" alt="Bus Booking App 데이터베이스 ERD">
+                                        <div class="slide-caption">데이터베이스 스키마 설계 (USERS · SCHEDULES · RESERVATIONS)</div>
+                                    </div>
+                                    
+                                    <!-- 두 번째 슬라이드: 노선 및 시간표 조회 -->
+                                    <div class="swiper-slide">
+                                        <img src="img/bus_main.png" alt="버스 운행 시간표 조회 화면">
+                                        <div class="slide-caption">출발지·도착지 및 날짜(KST) 기반 운행 시간표 조회</div>
+                                    </div>
+
+                                    <!-- 세 번째 슬라이드: 실시간 좌석 선택 및 결제 -->
+                                    <div class="swiper-slide">
+                                        <img src="img/bus_seat.png" alt="실시간 좌석 선택 화면">
+                                        <div class="slide-caption">실시간 좌석 선택(SeatPicker) 및 결제 금액 자동 산출</div>
+                                    </div>
+
+                                    <!-- 네 번째 슬라이드: 중복 로그인 감지 -->
+                                    <div class="swiper-slide">
+                                        <img src="img/bus_session.png" alt="중복 로그인 감지 및 세션 만료 화면">
+                                        <div class="slide-caption">단일 세션 토큰(CURRENT_TOKEN) 및 Polling 기반 중복 로그인 차단</div>
+                                    </div>
+
+                                    <!-- 다섯 번째 슬라이드: 동시성 제어 및 중복 예매 차단 -->
+                                    <div class="swiper-slide">
+                                        <img src="img/bus_duplication.png" alt="동시성 제어 및 중복 예매 차단 화면">
+                                        <div class="slide-caption">동시성 제어: 동일 좌석 중복 예매 차단 및 예외 처리</div>
+                                    </div>
+
+                                </div>
+                                <!-- 캐러셀 컨트롤러 -->
+                                <div class="swiper-button-next bus-next" style="color: var(--accent); transform: scale(0.7);"></div>
+                                <div class="swiper-button-prev bus-prev" style="color: var(--accent); transform: scale(0.7);"></div>
+                                <div class="swiper-pagination bus-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="erd-caption">▲ 핵심 구현: Oracle DB 트랜잭션·UNIQUE 제약 동시성 제어, UUID 단일 세션 Polling, React 스텝별 예매 UI</div>
+                        <div style="margin-top: 15px;">
+                            <a href="https://github.com/Jsblow001/bus" target="_blank" style="text-decoration: none; color: var(--accent); font-size: 0.9rem; font-weight: 600;">
+                                📂 Bus Booking App GitHub Repository 방문하기 →
                             </a>
                         </div>
                     </div>
@@ -697,8 +755,8 @@
 
 <script>
     const swiper = new Swiper(".mySwiper", {
-        loop: true, // 무한 반복
-        spaceBetween: 10, // 슬라이드 간 간격
+        loop: true,
+        spaceBetween: 10,
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
@@ -708,24 +766,38 @@
             prevEl: ".swiper-button-prev",
         },
         autoplay: {
-            delay: 3500, // 3.5초마다 자동 전환
+            delay: 3500,
             disableOnInteraction: false,
         },
     });
 
     const semiSwiper = new Swiper(".semiSwiper", {
         loop: true,
-
         pagination: {
             el: ".semi-pagination",
             clickable: true,
         },
-
         navigation: {
             nextEl: ".semi-next",
             prevEl: ".semi-prev",
         },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+    });
 
+    const busSwiper = new Swiper(".busSwiper", {
+        loop: true,
+        spaceBetween: 10,
+        pagination: {
+            el: ".bus-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".bus-next",
+            prevEl: ".bus-prev",
+        },
         autoplay: {
             delay: 3500,
             disableOnInteraction: false,
